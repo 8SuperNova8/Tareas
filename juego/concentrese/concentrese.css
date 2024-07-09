@@ -1,0 +1,134 @@
+body , html {
+    margin: 0;
+    padding: 0;
+    background-image: url('img/fondoLaminaDorada.jpg');
+    align-items: center;
+    color: rgb(6, 7, 7);
+    
+}
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.tablero {
+    padding: 10px;
+    width: 550px;
+    height: 650px;
+    margin: 0 auto;
+    /*background-color: brown; */
+    background: linear-gradient(to right, #801b51, #ac1b2e);
+    border: 10px outset rgb(213, 187, 238);
+    display: grid;
+    grid-gap: 20px; /*espacio entre celdas horizontal */
+    grid-row-gap: 20px; /*escpacion entre celdas vertical*/
+    grid-template-columns: 100px  100px 100px 100px;
+    align-items: center;  /*con respecto al contendor alinea vertical*/
+    justify-content: center; /*respecto al contenedor alinea horizonta */
+}
+
+
+.tarjeta {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.tarjeta .cuadrado {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(236, 203, 41);
+    border-radius: 10%;
+    /*backface-visibility: hidden; */
+    z-index: 1;
+    cursor: pointer;
+
+}
+
+.tarjeta .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.90s;
+  transform-style: preserve-3d;
+}
+
+.tarjeta .cuadrado,
+.tarjeta .imagen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgb(236, 203, 41);
+  color: #03446A;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+.tarjeta .imagen {
+  background: #fff;
+  color: white;
+  transform: rotateY( 180deg );
+}
+
+.tarjeta img {
+    width: 80px;
+}
+
+.tarjeta .content.flip {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+}
+
+ .contenedor {
+    margin-left: 20px;
+    position: relative;
+    align-items: center;
+    grid-gap: 60px;
+    display: grid;
+    grid-template-columns: 150px  150px;
+
+}
+
+.contenedor .btn {
+    padding: 15px;
+}
+
+.contenedor .time {
+    border: solid 1px;
+    height: 100px;
+    width: 200px;
+    background-color: rgb(213, 187, 238);
+}
+
+.contenedor .time p {
+    margin-top: 5px;
+    margin-left: 5px;
+    margin: center;
+    
+}
+
+.start{
+    background: #c5bcbc73;
+    position: absolute;
+    width: 550px;
+    text-align: center;
+    height: 210px;
+}
+.start p{
+    font-size: 31px;
+    margin-top: 15%;
+    color: #838542;
+    background: #d8d8dd;
+}
+
+.match .content .imagen{
+    outline: none;
+    border-color: #20d1c1;
+    box-shadow: 0 0 8px #20d1c1;
+}
+
