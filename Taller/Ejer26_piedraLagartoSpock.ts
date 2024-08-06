@@ -17,8 +17,6 @@ let juego= [
     { spock: ['tijera', 'piedra'] },
 ];
 
-//let puntaje: [string, string][] = [['tijera', 'papel']];
-
 function pptls (array: string[][]) {
     let j1 = 0
     let j2 =0
@@ -33,13 +31,13 @@ function pptls (array: string[][]) {
         //valida que `contiene` no sea undefined y que tenga la propiedad `valorj1`
         if (contiene && contiene[valorj1] ) {
             if (valorj1 == puntaje[i][1] ) continue
-            else if (contiene[valorj1].includes(puntaje[i][1]))  j1 ++
+            else if (contiene[valorj1].includes(puntaje[i][1]))  j1 ++ // si la lsita de contiene tiene el valor de j2 significa que gana j1
             else {
                  j2++
             }
         }
     }
-    console.log ('j1',j1, 'j2',j2)
+    //console.log ('j1',j1, 'j2',j2)
     if (j1 == j2) return 'Es un Empate'
     else if (j1 > j2) return 'Gana el jugador 1'
     else {
@@ -47,5 +45,5 @@ function pptls (array: string[][]) {
     }
 }
 
-const puntaje = [['papel','papel'],['tijera','spock'], ['lagarto', 'lagarto'],['piedra', 'lagarto']]
+const puntaje = [['papel','papel'],['tijera','spock'], ['lagarto', 'tijera'],['piedra', 'lagarto']]
 console.log (pptls(puntaje))
